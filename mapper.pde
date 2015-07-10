@@ -7,28 +7,26 @@ void mapper() {
   int internalY = 0;
 
 
-  //canvasW = 300;
-  //canvasH = 64;
-
   int s;
   boolean up;
 
-  internalX = 40;
-  internalY =  90;//starting point on canvas
+  //quadrant #1
+  internalX = 5;
+  internalY =  5;//starting point on canvas
   s=1;
-  up = true;
+  up = false;
 
 
-  for (int x = 0; x < 200; x++) {//start and number of pixels on strip
+  for (int x = 0; x < 150; x++) {//start and number of pixels on strip
 
     //v strip #
     ledPos[xyPixels(x, 0, ledsW)] = xyPixels(internalX, internalY, canvasW);
     println(internalX + " " + internalY + " " + s);
     //make grid
     s++;//going up or down
-    if (s > 20) {//height in pixels
+    if (s > 15) {//height in pixels
       s = 1;
-      internalX -= 4;//distance for x
+      internalX += 4;//distance for x
       up = !up;
       println("flipY" + up);
     } else {
@@ -39,6 +37,96 @@ void mapper() {
       }
     }
   }
+
+
+  //quadrant #2
+  internalX = 45;
+  internalY = 5;//starting point on canvas
+  s=1;
+  up = false;
+
+
+  for (int x = 150; x < 300; x++) {//start and number of pixels on strip
+
+    //v strip #
+    ledPos[xyPixels(x, 0, ledsW)] = xyPixels(internalX, internalY, canvasW);
+    println(internalX + " " + internalY + " " + s);
+    //make grid
+    s++;//going up or down
+    if (s > 15) {//height in pixels
+      s = 1;
+      internalX += 4;//distance for x
+      up = !up;
+      println("flipY" + up);
+    } else {
+      if (up == true) {
+        internalY -= 4;//distance for y
+      } else {
+        internalY += 4;
+      }
+    }
+    
+  }
+
+
+  //quadrant #3
+  internalX = 5;
+  internalY = 65;//starting point on canvas
+  s=1;
+  up = false;
+
+
+  for (int x = 0; x < 150; x++) {//start and number of pixels on strip
+
+    //v strip #
+    ledPos[xyPixels(x, 1, ledsW)] = xyPixels(internalX, internalY, canvasW);
+    println(internalX + " " + internalY + " " + s);
+    //make grid
+    s++;//going up or down
+    if (s > 15) {//height in pixels
+      s = 1;
+      internalX += 4;//distance for x
+      up = !up;
+      println("flipY" + up);
+    } else {
+      if (up == true) {
+        internalY -= 4;//distance for y
+      } else {
+        internalY += 4;
+      }
+    }
+  }
+
+
+  //quadrant #4
+  internalX = 45;
+  internalY =  65;//starting point on canvas
+  s=1;
+  up = false;
+
+
+  for (int x = 150; x < 300; x++) {//start and number of pixels on strip
+
+    //v strip #
+    ledPos[xyPixels(x, 1, ledsW)] = xyPixels(internalX, internalY, canvasW);
+    println(internalX + " " + internalY + " " + s);
+    //make grid
+    s++;//going up or down
+    if (s > 15) {//height in pixels
+      s = 1;
+      internalX += 4;//distance for x
+      up = !up;
+      println("flipY" + up);
+    } else {
+      if (up == true) {
+        internalY -= 4;//distance for y
+      } else {
+        internalY += 4;
+      }
+    }
+  }
+
+
 }
 
 
@@ -113,7 +201,7 @@ void drawPixelPusher() {
         Pixel p = new Pixel((byte)red(c), (byte)green(c), (byte)blue(c));
         //if (y < strips.size()) {
         //if (y < strips.size() && y >= 2  && y <= 6) {
-        if (y < strips.size() && y == 0) {
+        if (y < strips.size() && y <= 1) {
 
           //if (y < strips1.size() && y!=34) {
           //if (y < strips1.size() && y==65) {

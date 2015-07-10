@@ -37,8 +37,8 @@ boolean dmxEnable =false;
 boolean pixEnable = true;
 
 
-int ledsW = 200;
-int ledsH = 1;
+int ledsW = 300;
+int ledsH = 2;
 int dmxAddr = 100;
 int dmxUniv = 1;
 int[] ledPos;
@@ -46,8 +46,11 @@ int[] dmxPos;
 int thisLedPos;
 int thisDmxPos;
 
-int canvasW = 50;
-int canvasH = 100;
+int canvasW = 100;
+int canvasH = 125;
+//int canvasW = 240;
+//int canvasH = 200;
+
 
 int setcolorMode = 220;
 int vFader2 = 255;
